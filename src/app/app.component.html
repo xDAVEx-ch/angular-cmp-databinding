@@ -1,0 +1,35 @@
+<div class="container">
+  <!--Our own events: serverCreated and blueprintCreated-->
+  <app-controls
+  (serverCreated)="onServerAdded($event)"
+  (blueprintCreated)="onBlueprintAdded($event)"
+  >
+  </app-controls>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <!--Custom property binding. Our element property is accessible to 
+        app parent component
+      -->
+
+      <button class="btn btn-danger" (click)="onDestroyElement()">Destroy!!</button>
+
+      <app-server-element
+        *ngFor="let serverElement of serverElements"
+        [element]="serverElement"
+      >
+        
+      <!--By default, any data inside components is lost-->
+      <!--However, using directives inside app-server-element we changed this-->
+
+        <p #contentParagraph>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">
+            {{ serverElement.content }}
+          </strong>
+          <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+        </p>
+
+      </app-server-element>
+    </div>
+  </div>
+</div>
