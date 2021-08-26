@@ -5,5 +5,15 @@
       content in the middle of this component
     -->
     <ng-content></ng-content>
+
+    <!--
+      Creating our directives in appBetterHighlight.
+      Binding to our directives in highlightColor.
+
+      appBetterHighlight='yellow' works similar
+    -->
+    <p [appBetterHighlight]="'yellow'" [highlightColor]="'red'">
+      Style me with basic directives
+    </p>
   </div>
 </div>

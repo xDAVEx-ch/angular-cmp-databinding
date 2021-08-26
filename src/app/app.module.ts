@@ -6,12 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ControlsComponent } from './controls/controls.component';
 import { ServerElementComponent } from './server-element/server-element.component';
+import { betterHighlight } from './highlight/highlight.directive';
+import { UnlessDirective } from './unless/unless.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ControlsComponent,
-    ServerElementComponent
+    ServerElementComponent,
+    betterHighlight,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,
